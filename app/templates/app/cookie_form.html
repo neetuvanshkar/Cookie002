@@ -1,0 +1,38 @@
+<!-- myapp/templates/myapp/cookie_form.html -->
+<!-- myapp/templates/myapp/cookie_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Cookies</title>
+</head>
+<body>
+   
+    <div style="border: 3px; color: black; background-color: bisque; border: radius 2px; height: 300px; width: 250px; justify-content: center;align-items: center;
+    margin-bottom: 2px; padding: 150px; padding-top: 30px;">
+ 
+    <h1>Set Cookies</h1>
+    <form method="post" action="{% url 'set_cookies' %}">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age"><br><br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city"><br><br>
+        <button type="submit">Set Cookies</button>
+    </form>
+    
+    <h1>Get Cookies</h2>
+    <form method="get" action="{% url 'get_cookies' %}">
+        <button type="submit">Get Cookies</button>
+    </form>
+
+    <h1>Delete Cookies</h1>
+    <form method="post" action="{% url 'delete_cookies' %}">
+        {% csrf_token %}
+        <button type="submit">Delete Cookies</button>
+    </form>
+    </div>
+   
+</body>
+</html>
